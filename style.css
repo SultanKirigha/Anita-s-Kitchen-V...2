@@ -119,7 +119,7 @@ header{
         display: block;
     }
     .dropdown_menu {
-        display: block;
+        display: none;
     }
 }
 @media (max-width: 576px){
