@@ -136,7 +136,7 @@ header{
 /* carousel */
 .carousel{
     position: relative;
-    height: 800px;
+    height: 680px;
     overflow: hidden;
     margin-top: -50px;
 }
@@ -261,6 +261,16 @@ header{
 }
 .carousel .list .item:nth-child(2) .introduce .seeMore{
     animation-delay: 1.6s;
+    background-color: #872341;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: scale 0.2 ease;
 }
 /* next click */
 .carousel.next .item:nth-child(1){
@@ -420,6 +430,8 @@ header{
     border-radius: 50%;
     font-family: monospace;
     border: 1px solid #5555;
+    background-color: #872341;
+    color: #fff;
     font-size: large;
     bottom: 20%;
     left: 10%;
