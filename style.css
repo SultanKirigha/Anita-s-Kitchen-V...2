@@ -24,7 +24,105 @@
     --item5-filter: blur(40px);
     --item5-zIndex: 7;
     --item5-opacity: 0;
-}
+/**
+   * COLORS
+   */
+
+   --gold-crayola: hsl(38, 61%, 73%);
+   --quick-silver: hsla(0, 0%, 65%, 1);
+   --davys-grey: hsla(30, 3%, 34%, 1);
+   --smoky-black-1: hsla(40, 12%, 5%, 1);
+   --smoky-black-2: hsla(30, 8%, 5%, 1);
+   --smoky-black-3: hsla(0, 3%, 7%, 1);
+   --eerie-black-1: hsla(210, 4%, 9%, 1);
+   --eerie-black-2: hsla(210, 4%, 11%, 1);
+   --eerie-black-3: hsla(180, 2%, 8%, 1);
+   --eerie-black-4: hsla(0, 0%, 13%, 1);
+   --white: hsla(0, 0%, 100%, 1);
+   --white-alpha-20: hsla(0, 0%, 100%, 0.2);
+   --white-alpha-10: hsla(0, 0%, 100%, 0.1);
+   --black: hsla(0, 0%, 0%, 1);
+   --black-alpha-80: hsla(0, 0%, 0%, 0.8);
+   --black-alpha-15: hsla(0, 0%, 0%, 0.15);
+ 
+   /**
+    * GRADIENT COLOR
+    */
+ 
+   --loading-text-gradient: linear-gradient(90deg, transparent 0% 16.66%, var(--smoky-black-3) 33.33% 50%,  transparent 66.66% 75%);
+   --gradient-1: linear-gradient(to top,hsla(0, 0%, 0%, 0.9),hsla(0, 0%, 0%, 0.7),transparent);
+ 
+   /**
+    * TYPOGRAPHY
+    */
+ 
+   /* font-family */
+   --fontFamily-forum: 'Forum', cursive;
+   --fontFamily-dm_sans: 'DM Sans', sans-serif;
+ 
+   /* font-size */
+   --fontSize-display-1: calc(1.3rem + 6.7vw);
+   --fontSize-headline-1: calc(2rem + 2.5vw);
+   --fontSize-headline-2: calc(1.3rem + 2.4vw);
+   --fontSize-title-1: calc(1.6rem + 1.2vw);
+   --fontSize-title-2: 2.2rem;
+   --fontSize-title-3: 2.1rem;
+   --fontSize-title-4: calc(1.6rem + 1.2vw);
+   --fontSize-body-1: 2.4rem;
+   --fontSize-body-2: 1.6rem;
+   --fontSize-body-3: 1.8rem;
+   --fontSize-body-4: 1.6rem;
+   --fontSize-label-1: 1.4rem;
+   --fontSize-label-2: 1.2rem;
+ 
+   /* font-weight */
+   --weight-regular: 400;
+   --weight-bold: 700;
+ 
+   /* line-height */
+   --lineHeight-1: 1em;
+   --lineHeight-2: 1.2em;
+   --lineHeight-3: 1.5em;
+   --lineHeight-4: 1.6em;
+   --lineHeight-5: 1.85em;
+   --lineHeight-6: 1.4em;
+ 
+   /* letter-spacing */
+   --letterSpacing-1: 0.15em;
+   --letterSpacing-2: 0.4em;
+   --letterSpacing-3: 0.2em;
+   --letterSpacing-4: 0.3em;
+   --letterSpacing-5: 3px;
+ 
+   /**
+    * SPACING
+    */
+ 
+   --section-space: 70px;
+ 
+   /**
+    * SHADOW
+    */
+ 
+   --shadow-1: 0px 0px 25px 0px hsla(0, 0%, 0%, 0.25);
+ 
+   /**
+    * BORDER RADIUS
+    */
+ 
+   --radius-24: 24px;
+   --radius-circle: 50%;
+ 
+   /**
+    * TRANSITION
+    */
+ 
+   --transition-1: 250ms ease;
+   --transition-2: 500ms ease;
+   --transition-3: 1000ms ease;
+ 
+ }
+ 
 *{
     font-family: 'Poppins', sans-serif;    
     font-size: 16px;
@@ -425,8 +523,8 @@ header{
 }
 #prev,
 #next{
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     font-family: monospace;
     border: 1px solid #5555;
@@ -482,69 +580,228 @@ header{
     transform: translate(-100%, -50%) rotate(90deg);
     filter: blur(130px);
 }
-@media screen and (max-width: 991px){
-    /* ipad, tablets */
-    .carousel .list .item{
+
+/* Services Section */
+.section {
+    max-width: 1200px; /* Set a maximum width to match the navbar */
+    margin: 0 auto; /* Center the section */
+  }
+  
+  .grid-list {
+    gap: 10px; /* Adjust the gap value as needed */
+  }
+  
+  .bg-black-10 { background-color: var(--smoky-black-2); }
+  
+  .grid-list {
+    display: grid;
+    gap: 10px;
+  }
+  .grid-list {
+    display: grid;
+    gap: -20px; /* Adjust the gap value as needed */
+    grid-template-columns: repeat(3, 1fr); /* Adjust the number of columns as needed */
+  }
+  
+  
+  .hover\:shine { position: relative; }
+  
+  .hover\:shine::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to right, transparent 0%, #fff6 100%);
+    transform: skewX(-0.08turn) translateX(-180%);
+  }
+  .hover\:shine:is(:hover, :focus-within)::after {
+    transform: skewX(-0.08turn) translateX(275%);
+    transition: var(--transition-3);
+  }
+  
+  
+  
+  .btn-text {
+    color: #872341;
+    padding-block-end: 4px;
+    margin-inline: auto;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: var(--letterSpacing-3);
+    font-weight: var(--weight-bold);
+    transition: var(--transition-1);
+  }
+  
+  .btn-text:is(:hover, :focus-visible) { color: var(--white); }
+  
+  .shape {
+    display: none;
+    position: absolute;
+    max-width: max-content;
+    z-index: -1;
+  }
+  /*-----------------------------------*\
+  #SERVICE
+\*-----------------------------------*/
+.section-subtitle.label-2,
+.headline-1 {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.section-subtitle.label-2 {
+  font-weight: 600; /* Adjust the font weight */
+  font-size: 1.5em; /* Adjust the font size */
+}
+
+.headline-1 {
+  font-weight: 700; /* Adjust the font weight */
+  font-size: 2.5em; /* Adjust the font size */
+}
+.section-text {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: #fff;
+    font-size: 0.8em; /* Adjust the font size */
+    margin: 0 auto; /* Center the text */
+    max-width: 600px; /* Set a maximum width if needed */
+    line-height: 1.6; /* Adjust the line height */
+  }
+  
+.service .section-title { margin-block-end: 16px; }
+
+.service .section-text { margin-block-end: 40px; }
+
+.service-card {
+    overflow: hidden;
+    max-width: 100%; /* Set a maximum width as per your design */
+    margin: 0 auto; /* Center the card horizontally */
+  }
+  
+
+.service-card .has-before {
+  padding-block: 30px;
+  margin-block-end: 26px;
+  z-index: 1;
+}
+
+.service-card .has-before::before {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140px;
+  height: 100%;
+  background-image: url('./Assets/img-pattern.svg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: repeat;
+  transition: var(--transition-2);
+  transition-delay: 0;
+  z-index: -1;
+  will-change: transform;
+}
+
+.service-card:is(:hover, :focus-within) .has-before::before {
+  transform: rotateY(0.5turn) translateX(50%);
+  transition-delay: 300ms;
+}
+.card-banner {
+    width: 100%;
+    height: auto;
+  }
+  .card-content {
+    padding: 10px; /* Add padding as needed */
+    box-sizing: border-box; /* Include padding in the total width */
+  }
+  
+  .title-4.card-title {
+    margin: 0; /* Remove default margin */
+  }
+  
+  .btn-text {
+    margin-top: 5px; /* Adjust the top margin as needed */
+  }
+  .section-title,
+.section-subtitle,
+.section-text {
+  text-align: center; /* Center text within the section */
+}
+
+
+.service-card .card-banner { transition: var(--transition-2); }
+
+.service-card:is(:hover, :focus-within) .card-banner { transform: scale(1.05); }
+
+.service .card-title { margin-block-end: 12px; }
+  
+  
+/* End of Services */
+/* iPad and Tablets (max-width: 991px) */
+@media screen and (max-width: 991px) {
+    .carousel .list .item {
         width: 90%;
     }
-    .carousel.showDetail .list .item:nth-child(2) .detail .specifications{
+    .carousel.showDetail .list .item:nth-child(2) .detail .specifications {
         overflow: auto;
     }
-    .carousel.showDetail .list .item:nth-child(2) .detail .title{
+    .carousel.showDetail .list .item:nth-child(2) .detail .title {
         font-size: 2em;
     }
 }
-@media screen and (max-width: 767px){
-    /* mobile */
-    .carousel{
+
+/* Mobile Devices (max-width: 767px) */
+@media screen and (max-width: 767px) {
+    .carousel {
         height: 600px;
     }
-    .carousel .list .item{
+    .carousel .list .item {
         width: 100%;
         font-size: 10px;
     }
-    
-    .carousel .list{
+    .carousel .list {
         height: 100%;
     }
-    .carousel .list .item:nth-child(2) .introduce{
+    .carousel .list .item:nth-child(2) .introduce {
         width: 50%;
     }
-    
-    .carousel .list .item img{
+    .carousel .list .item img {
         width: 40%;
     }
-    .carousel.showDetail .list .item:nth-child(2) .detail{
+    .carousel.showDetail .list .item:nth-child(2) .detail {
         backdrop-filter: blur(10px);
         font-size: small;
     }
     .carousel .list .item:nth-child(2) .introduce .des,
-    .carousel.showDetail .list .item:nth-child(2) .detail .des{
+    .carousel.showDetail .list .item:nth-child(2) .detail .des {
         height: 100px;
         overflow: auto;
     }
-    .carousel.showDetail .list .item:nth-child(2) .detail .checkout{
+    .carousel.showDetail .list .item:nth-child(2) .detail .checkout {
         display: flex;
         width: max-content;
         float: right;
     }
 }
-/* RESPONSIVE DESIGN */
 
-@media (max-width: 992px){
+/* General Responsive Design (max-width: 992px) */
+@media (max-width: 992px) {
     .navbar .links,
     .navbar .action_btn {
         display: none;
     }
 
-    .navbar .toggle_btn{
+    .navbar .toggle_btn {
         display: block;
     }
     .dropdown_menu {
         display: none;
     }
 }
-@media (max-width: 576px){
+
+/* Extra adjustment for small screens (max-width: 576px) */
+@media (max-width: 576px) {
     .dropdown_menu {
         left: 2rem;
         width: unset;
